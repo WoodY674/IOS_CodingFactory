@@ -6,14 +6,23 @@
 //
 
 import Foundation
+import UIKit
 
-struct Country: Codable, Hashable {
-    var code: String
-    var name: String
-    var monnaie: String
-    var capitale: String
-    var continent: String
-    var flag: String
-    var positionGMaps: String
-    var population: Int32
+struct Country: Decodable {
+    
+    let cca2: String
+    let name: Name
+    let capital: [String]?
+    let population: Int
+    let flags: Flag
+
+}
+
+struct Name: Codable {
+    let common: String
+    let official: String
+}
+
+struct Flag: Codable {
+    let png: String
 }
