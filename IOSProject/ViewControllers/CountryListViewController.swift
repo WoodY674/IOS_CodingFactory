@@ -10,8 +10,11 @@ import UIKit
 class CountryListViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var searchBar: UISearchBar!
     
     var countries = [Country]()
+    var filteredResult = [Country]()
+    var searching = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +23,7 @@ class CountryListViewController: UIViewController {
             self.tableView.reloadData()
         }
         
+        searchBar.delegate = self
         tableView.delegate = self
         tableView.dataSource = self
     }
@@ -50,26 +54,58 @@ extension CountryListViewController: UITableViewDelegate, UITableViewDataSource 
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return countries.count
+        if searching {
+            return filteredResult.count
+        } else {
+            return countries.count
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "customCell") as! CustomViewCell
-        
         let country = countries[indexPath.row]
-        cell.countrynameLabel?.text = country.name.official.capitalized
-        cell.countryFlag.downloaded(from: country.flags.png)
-        
+
+        if searching {
+            cell.countrynameLabel?.text = filteredResult[indexPath.row].name.official.capitalized
+            cell.countryFlag.downloaded(from: filteredResult[indexPath.row].flags.png)
+
+        } else {
+            cell.countrynameLabel?.text = country.name.official.capitalized
+            cell.countryFlag.downloaded(from: country.flags.png)
+        }
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "showCountryDetails", sender: self)
+        if let vc = storyboard?.instantiateViewController(withIdentifier: "CountryDetails") as? CountryDetailsViewController {
+            
+            if searching {
+                vc.country = filteredResult[indexPath.row]
+
+            } else {
+                vc.country = countries[indexPath.row]
+            }
+            
+            self.present(vc, animated: true, completion: nil)
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? CountryDetailsViewController {
             destination.country = countries[(tableView.indexPathForSelectedRow?.row)!]
         }
+    }
+}
+
+extension CountryListViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchText.isEmpty {
+                filteredResult.removeAll()
+                searching = false
+            } else {
+                filteredResult = countries.filter{ $0.name.official.range(of: searchText, options: [.caseInsensitive, .anchored]) != nil }
+                searching = true
+            }
+            tableView.reloadData()
     }
 }

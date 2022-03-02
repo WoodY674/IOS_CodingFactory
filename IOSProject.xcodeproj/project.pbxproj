@@ -22,6 +22,7 @@
 		844BE16327CF65EE003E2B9D /* CountryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844BE16227CF65EE003E2B9D /* CountryListViewController.swift */; };
 		844BE16527CF6ACD003E2B9D /* CustomViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844BE16427CF6ACD003E2B9D /* CustomViewCell.swift */; };
 		844BE16727CF9805003E2B9D /* CountryDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844BE16627CF9805003E2B9D /* CountryDetailsViewController.swift */; };
+		844BE16927CFAB08003E2B9D /* SearchBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844BE16827CFAB08003E2B9D /* SearchBarViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		844BE16227CF65EE003E2B9D /* CountryListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryListViewController.swift; sourceTree = "<group>"; };
 		844BE16427CF6ACD003E2B9D /* CustomViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewCell.swift; sourceTree = "<group>"; };
 		844BE16627CF9805003E2B9D /* CountryDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryDetailsViewController.swift; sourceTree = "<group>"; };
+		844BE16827CFAB08003E2B9D /* SearchBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +166,7 @@
 			children = (
 				840A9E7A27CE383A00D58AA5 /* ViewController.swift */,
 				844BE16227CF65EE003E2B9D /* CountryListViewController.swift */,
+				844BE16827CFAB08003E2B9D /* SearchBarViewController.swift */,
 				844BE16627CF9805003E2B9D /* CountryDetailsViewController.swift */,
 			);
 			path = ViewControllers;
@@ -306,6 +309,7 @@
 				844BE16327CF65EE003E2B9D /* CountryListViewController.swift in Sources */,
 				840A9EE327CF151D00D58AA5 /* APICall.swift in Sources */,
 				840A9EE827CF21F600D58AA5 /* Country.swift in Sources */,
+				844BE16927CFAB08003E2B9D /* SearchBarViewController.swift in Sources */,
 				844BE16527CF6ACD003E2B9D /* CustomViewCell.swift in Sources */,
 				840A9EEB27CF348F00D58AA5 /* Score.swift in Sources */,
 				840A9E7927CE383A00D58AA5 /* SceneDelegate.swift in Sources */,

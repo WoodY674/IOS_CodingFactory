@@ -21,11 +21,7 @@ class CountryDetailsViewController: UIViewController {
         
         imageView.downloaded(from: url)
         countrynameLabel.text = country?.name.official.capitalized
-      
-        // Do any additional setup after loading the view.
     }
-    
-    
 }
 
 extension UIImageView {
