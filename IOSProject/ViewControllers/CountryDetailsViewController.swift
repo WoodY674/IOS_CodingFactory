@@ -11,6 +11,7 @@ class CountryDetailsViewController: UIViewController {
 
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var countrynameLabel: UILabel!
+    @IBOutlet weak var countrynameLabel2: UILabel!
     
     var country:Country?
 
@@ -21,7 +22,7 @@ class CountryDetailsViewController: UIViewController {
         
         imageView.downloaded(from: url)
         countrynameLabel.text = country?.name.official.capitalized
-      
+        countrynameLabel2.text = "\(country?.population ?? 0)" // Le INT population à été Stringisé pour être affiché
         // Do any additional setup after loading the view.
     }
     

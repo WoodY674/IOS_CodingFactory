@@ -198,6 +198,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Country Population" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7yw-ob-CCM">
+                                <rect key="frame" x="5" y="138" width="404" height="720"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="MfZ-Ml-eHx"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -214,6 +221,7 @@
                     <navigationItem key="navigationItem" id="HDc-di-CCP"/>
                     <connections>
                         <outlet property="countrynameLabel" destination="2jg-jD-yEO" id="K5g-9z-fNm"/>
+                        <outlet property="countrynameLabel2" destination="7yw-ob-CCM" id="xzU-R5-2Og"/>
                         <outlet property="imageView" destination="Px3-dd-sVC" id="x9K-ef-LT5"/>
                     </connections>
                 </viewController>
