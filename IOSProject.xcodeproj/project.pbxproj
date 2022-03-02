@@ -16,6 +16,9 @@
 		840A9E8E27CE383D00D58AA5 /* IOSProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840A9E8D27CE383D00D58AA5 /* IOSProjectTests.swift */; };
 		840A9E9827CE383D00D58AA5 /* IOSProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840A9E9727CE383D00D58AA5 /* IOSProjectUITests.swift */; };
 		840A9E9A27CE383D00D58AA5 /* IOSProjectUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840A9E9927CE383D00D58AA5 /* IOSProjectUITestsLaunchTests.swift */; };
+		840A9EE327CF151D00D58AA5 /* APICall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840A9EE227CF151C00D58AA5 /* APICall.swift */; };
+		840A9EE827CF21F600D58AA5 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840A9EE727CF21F600D58AA5 /* Country.swift */; };
+		840A9EEB27CF348F00D58AA5 /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840A9EEA27CF348F00D58AA5 /* Score.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,9 @@
 		840A9E9327CE383D00D58AA5 /* IOSProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IOSProjectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		840A9E9727CE383D00D58AA5 /* IOSProjectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOSProjectUITests.swift; sourceTree = "<group>"; };
 		840A9E9927CE383D00D58AA5 /* IOSProjectUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOSProjectUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		840A9EE227CF151C00D58AA5 /* APICall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICall.swift; sourceTree = "<group>"; };
+		840A9EE727CF21F600D58AA5 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
+		840A9EEA27CF348F00D58AA5 /* Score.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Score.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +105,8 @@
 		840A9E7527CE383A00D58AA5 /* IOSProject */ = {
 			isa = PBXGroup;
 			children = (
+				840A9EE927CF220300D58AA5 /* api */,
+				840A9EE627CF21DD00D58AA5 /* models */,
 				840A9E7627CE383A00D58AA5 /* AppDelegate.swift */,
 				840A9E7827CE383A00D58AA5 /* SceneDelegate.swift */,
 				840A9E7A27CE383A00D58AA5 /* ViewController.swift */,
@@ -125,6 +133,23 @@
 				840A9E9927CE383D00D58AA5 /* IOSProjectUITestsLaunchTests.swift */,
 			);
 			path = IOSProjectUITests;
+			sourceTree = "<group>";
+		};
+		840A9EE627CF21DD00D58AA5 /* models */ = {
+			isa = PBXGroup;
+			children = (
+				840A9EE727CF21F600D58AA5 /* Country.swift */,
+				840A9EEA27CF348F00D58AA5 /* Score.swift */,
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
+		840A9EE927CF220300D58AA5 /* api */ = {
+			isa = PBXGroup;
+			children = (
+				840A9EE227CF151C00D58AA5 /* APICall.swift */,
+			);
+			path = api;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -260,6 +285,9 @@
 			files = (
 				840A9E7B27CE383A00D58AA5 /* ViewController.swift in Sources */,
 				840A9E7727CE383A00D58AA5 /* AppDelegate.swift in Sources */,
+				840A9EE327CF151D00D58AA5 /* APICall.swift in Sources */,
+				840A9EE827CF21F600D58AA5 /* Country.swift in Sources */,
+				840A9EEB27CF348F00D58AA5 /* Score.swift in Sources */,
 				840A9E7927CE383A00D58AA5 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
