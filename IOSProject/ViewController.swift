@@ -12,7 +12,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     private let countriesAPICall = Service()
-            
+        
+    var countries = [Country]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
                 
