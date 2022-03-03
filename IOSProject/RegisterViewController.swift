@@ -54,6 +54,7 @@ class RegisterViewController: UIViewController {
             
             //Registered success
             print("success")
+            self.dismiss(animated: true)
         }
     }
 }

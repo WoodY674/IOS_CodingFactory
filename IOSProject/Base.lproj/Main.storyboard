@@ -22,7 +22,7 @@
                                 <textInputTraits key="textInputTraits" textContentType="email"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="b9U-kf-ACe">
-                                <rect key="frame" x="95" y="358.5" width="224" height="34"/>
+                                <rect key="frame" x="95" y="269.5" width="224" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="WDm-i3-SHm"/>
                                 </constraints>
@@ -40,15 +40,12 @@
                                     <segue destination="xIY-6a-lBP" kind="showDetail" id="Za6-Cb-4Lv"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gAC-DP-YZ7">
-                                <rect key="frame" x="168" y="431.5" width="78" height="33"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="33" id="Bhr-9j-seH"/>
-                                </constraints>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yqi-0P-yOF">
+                                <rect key="frame" x="168" y="433" width="78" height="31"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Register"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Register"/>
                                 <connections>
-                                    <action selector="Connect:" destination="xfT-rT-XHZ" eventType="touchUpInside" id="oSc-y6-S2r"/>
+                                    <action selector="Connect:" destination="xfT-rT-XHZ" eventType="touchUpInside" id="K2y-h9-6Wh"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -56,25 +53,26 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="IWI-AM-45p" firstAttribute="centerY" secondItem="bSl-4Z-PU6" secondAttribute="centerY" constant="-172" id="5QS-vy-HTl"/>
+                            <constraint firstItem="yqi-0P-yOF" firstAttribute="centerY" secondItem="bSl-4Z-PU6" secondAttribute="centerY" constant="44.5" id="7gj-85-Rs8"/>
                             <constraint firstItem="IWI-AM-45p" firstAttribute="centerX" secondItem="bSl-4Z-PU6" secondAttribute="centerX" id="86B-9k-gTm"/>
+                            <constraint firstItem="yqi-0P-yOF" firstAttribute="centerX" secondItem="bSl-4Z-PU6" secondAttribute="centerX" id="8Ms-3A-yUv"/>
                             <constraint firstItem="HA5-nZ-C1w" firstAttribute="centerY" secondItem="bSl-4Z-PU6" secondAttribute="centerY" constant="84" id="E9b-n5-wme"/>
                             <constraint firstItem="HA5-nZ-C1w" firstAttribute="leading" secondItem="bSl-4Z-PU6" secondAttribute="leading" constant="95" id="EdL-GR-Dyw"/>
+                            <constraint firstItem="HA5-nZ-C1w" firstAttribute="top" secondItem="yqi-0P-yOF" secondAttribute="bottom" constant="8.5" id="GI1-jl-c0f"/>
                             <constraint firstItem="IWI-AM-45p" firstAttribute="centerY" secondItem="bSl-4Z-PU6" secondAttribute="centerY" constant="-172" id="KnQ-1g-Yng"/>
                             <constraint firstItem="IWI-AM-45p" firstAttribute="centerX" secondItem="bSl-4Z-PU6" secondAttribute="centerX" id="Lju-ZN-y0X"/>
                             <constraint firstItem="HA5-nZ-C1w" firstAttribute="centerX" secondItem="bSl-4Z-PU6" secondAttribute="centerX" id="P5Y-6h-BV0"/>
+                            <constraint firstItem="yqi-0P-yOF" firstAttribute="top" secondItem="b9U-kf-ACe" secondAttribute="bottom" constant="129.5" id="Ss3-T8-R7f"/>
                             <constraint firstItem="b9U-kf-ACe" firstAttribute="leading" secondItem="c7P-ds-sLy" secondAttribute="leading" constant="95" id="ce4-T7-1dT"/>
-                            <constraint firstItem="gAC-DP-YZ7" firstAttribute="top" secondItem="b9U-kf-ACe" secondAttribute="bottom" constant="39" id="dlk-OD-Vhc"/>
                             <constraint firstItem="b9U-kf-ACe" firstAttribute="centerX" secondItem="bSl-4Z-PU6" secondAttribute="centerX" id="mql-Om-1gt"/>
-                            <constraint firstItem="gAC-DP-YZ7" firstAttribute="centerX" secondItem="HA5-nZ-C1w" secondAttribute="centerX" id="myH-vk-9y5"/>
                             <constraint firstItem="IWI-AM-45p" firstAttribute="leading" secondItem="bSl-4Z-PU6" secondAttribute="leading" constant="95" id="uNg-zD-CP1"/>
-                            <constraint firstItem="HA5-nZ-C1w" firstAttribute="top" secondItem="gAC-DP-YZ7" secondAttribute="bottom" constant="8" symbolic="YES" id="yL3-hm-HKl"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="tWm-X4-61h"/>
                     <connections>
                         <outlet property="emailTextField" destination="IWI-AM-45p" id="2bN-2X-HNy"/>
                         <outlet property="passwordTextField" destination="b9U-kf-ACe" id="RLx-N2-Mch"/>
-                        <outlet property="registerButton" destination="gAC-DP-YZ7" id="oih-W4-NLD"/>
+                        <outlet property="registerButton" destination="yqi-0P-yOF" id="7SF-CY-GfP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="41q-FN-3VP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -95,9 +93,9 @@
                                 <textInputTraits key="textInputTraits" textContentType="email"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s9V-6F-L48">
-                                <rect key="frame" x="177.5" y="387" width="59.5" height="34"/>
+                                <rect key="frame" x="175.5" y="387" width="63.5" height="34"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Login"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Log in"/>
                                 <connections>
                                     <action selector="Connect:" destination="xfT-rT-XHZ" eventType="touchUpInside" id="1FF-jJ-JzS"/>
                                     <action selector="Connect:" destination="xIY-6a-lBP" eventType="touchUpInside" id="dd5-52-xFr"/>
@@ -189,74 +187,14 @@
             </objects>
             <point key="canvasLocation" x="-3983" y="-1351"/>
         </scene>
-        <!--Quizz-->
+        <!--View Controller-->
         <scene sceneID="fBL-3S-rTd">
             <objects>
                 <viewController id="aGJ-2r-ZpJ" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="ErA-Jk-u4O">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                <viewController id="aGJ-2r-ZpJ" customClass="GamesViewController" customModule="IOSProject" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="vdz-NC-LDN">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p3y-b0-MID">
-                                <rect key="frame" x="176" y="433" width="64" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Log in"/>
-                                <connections>
-                                    <segue destination="xfT-rT-XHZ" kind="popoverPresentation" popoverAnchorView="p3y-b0-MID" id="diD-3Y-seA">
-                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                                    </segue>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yM0-mL-LGH">
-                                <rect key="frame" x="164" y="533" width="88" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Add entry"/>
-                            </button>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="aQ2-4z-M9k"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellDevinePays" id="Wy0-S7-HgG">
-                                <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Wy0-S7-HgG" id="j0R-Jn-s6m">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellDevineCapitale" id="q3i-dR-2wL">
-                                <rect key="frame" x="0.0" y="88" width="414" height="43.5"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="q3i-dR-2wL" id="UXn-WE-NT5">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellDevineMonnaie" id="qMJ-QH-yg1">
-                                <rect key="frame" x="0.0" y="131.5" width="414" height="43.5"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qMJ-QH-yg1" id="I77-KU-aPF">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="aGJ-2r-ZpJ" id="yDE-nP-Trr"/>
-                            <outlet property="delegate" destination="aGJ-2r-ZpJ" id="dvl-wc-fSP"/>
-                        </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Quizz" id="JfM-fL-48P"/>
-                    <connections>
-                        <outlet property="tableView" destination="ErA-Jk-u4O" id="P35-mk-lYB"/>
-                        <outlet property="addEntryButton" destination="yM0-mL-LGH" id="Wxy-Zx-GEq"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Sy-Op-ajl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -389,18 +327,43 @@
         <!--Home-->
         <scene sceneID="Yk2-dH-6p7">
             <objects>
-                <viewController id="Xdm-dP-smH" sceneMemberID="viewController">
+                <viewController id="Xdm-dP-smH" customClass="HomeViewController" customModule="IOSProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="n0n-A2-73z">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="onc-tb-y8I">
+                                <rect key="frame" x="164" y="433" width="88" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Add entry"/>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="sND-BT-kJ8"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Home" id="JtN-gz-QER"/>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Home" id="JtN-gz-QER">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="4Yx-7b-Z4Y">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="4aa-Yp-hbB">
+                                <rect key="frame" x="324" y="5" width="70" height="34.5"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Log in"/>
+                                <connections>
+                                    <segue destination="xfT-rT-XHZ" kind="showDetail" id="Mks-80-2pD"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="addEntryButton" destination="onc-tb-y8I" id="r4i-ru-P5k"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mka-zI-qsg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3142" y="-561"/>
+            <point key="canvasLocation" x="-3142.0289855072465" y="-561.16071428571422"/>
         </scene>
         <!--Scores-->
         <scene sceneID="lad-zw-C3x">

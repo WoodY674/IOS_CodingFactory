@@ -45,6 +45,7 @@ class LoginViewController: UIViewController {
                 return
             }
             print("success")
+            self!.dismiss(animated: true)
             if Auth.auth().currentUser != nil {
               // User is signed in.
                 print(Auth.auth().currentUser!)

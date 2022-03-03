@@ -23,7 +23,7 @@ class ScoresViewController: UIViewController, UITableViewDataSource {
     
     var scoresList = [Scores]()
     
-    let currentUser = Auth.auth().currentUser?.uid
+    let myCurrentUser = Auth.auth().currentUser?.uid
     
     
     
@@ -32,7 +32,7 @@ class ScoresViewController: UIViewController, UITableViewDataSource {
         
         tableView.dataSource = self
         
-        database.child(currentUser!).observe(.value, with: {snapshot in
+        database.child(myCurrentUser!).observe(.value, with: {snapshot in
             guard let snapshotValue = snapshot.value as? [String: Any] else {
                 return
             }
