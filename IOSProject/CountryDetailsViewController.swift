@@ -19,12 +19,12 @@ class CountryDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        guard let url = country?.flags.png else { return }
+        guard let url = country?.flag else { return }
         
         imageView.downloaded(from: url)
         countrynameLabel.text = country?.name
-        countrynameLabel2.text = "\(country?.population ?? 0)" // Le INT population à été Stringisé pour être affiché
-        countrynameLabel3.text = "\(String(describing: country?.capital))"
+        countrynameLabel2.text = country?.capital
+        countrynameLabel3.text = country?.region
         // Do any additional setup after loading the view.
     }
 }
