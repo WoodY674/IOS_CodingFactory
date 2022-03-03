@@ -45,7 +45,14 @@ class LoginViewController: UIViewController {
                 return
             }
             print("success")
-            self?.performSegue(withIdentifier: "MainTabBarController", sender: (Any).self)
+            if Auth.auth().currentUser != nil {
+              // User is signed in.
+                print(Auth.auth().currentUser!)
+            } else {
+              // No user is signed in.
+              // ...
+            }
+            //self?.performSegue(withIdentifier: "MainTabBarController", sender: (Any).self)
         }
         
     }
