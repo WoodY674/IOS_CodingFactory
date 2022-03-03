@@ -10,5 +10,5 @@ import Foundation
 struct ScoreKeys {
     static let nom = "nom"
     static let score = "score"
-    
+    static let jeu = "jeu"
 }
