@@ -9,9 +9,10 @@ import UIKit
 
 class ViewController: UIViewController {
     
-
+    
     @IBOutlet weak var lbSeconds: UILabel!
     //@IBOutlet weak var textfiedReponse: UITextField!
+    @IBOutlet weak var btValider: UIButton!
     
     @IBOutlet weak var lbScore: UILabel!
     @IBOutlet weak var textfield: UITextField!
@@ -25,6 +26,7 @@ class ViewController: UIViewController {
         var value = textfield.text!
         if(value == continent) {
             counterScore()
+            textfield.text = ""
             countriesAPICall.getCountriesRandomCapital(completion: {response, error in
                 print(response)
                 DispatchQueue.main.async {
@@ -58,6 +60,17 @@ class ViewController: UIViewController {
         lbSeconds.text = String(seconds) + " secondes"
         if(seconds == 0) {
             timer.invalidate()
+            var dialogMessage = UIAlertController(title: "Information", message: "Partie terminée, score = \(score)", preferredStyle: .alert)
+            let ok = UIAlertAction(title: "OK", style: .default, handler: { (action) -> Void in
+                 print("Ok button tapped")
+              })
+            //Add OK button to a dialog message
+            dialogMessage.addAction(ok)
+            // Present Alert to
+            self.present(dialogMessage, animated: true, completion: nil)
+            textfield.isEnabled = false
+            btValider.isEnabled = false
+            
         }
     }
     
