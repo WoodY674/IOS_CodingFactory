@@ -12,6 +12,8 @@ class CountryListViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
     
+    private let getCountriesFromApi = Service()
+
     var countries = [Country]()
     var filteredResult = [Country]()
     var searching = false
@@ -19,35 +21,24 @@ class CountryListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        getCountriesData { [self] in
-            self.tableView.reloadData()
+        getCountriesFromApi.getCountries { [self] response, error in
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+                print(response)
+            }
         }
         
         searchBar.delegate = self
         tableView.delegate = self
         tableView.dataSource = self
     }
-    
-    func getCountriesData(completed: @escaping () -> ()) {
-        let url = URL(string: "https://restcountries.com/v3.1/all")
-        
-        let task = URLSession.shared.dataTask(with: url!) { (data, response, error) in
-            if error == nil {
-                do {
-                    self.countries = try JSONDecoder().decode([Country].self, from: data!)
-                    DispatchQueue.main.async {
-                        completed()
-                    }
-                } catch {
-                    print("JSON error")
-                }
-            }
-        }
-        task.resume()
-    }
+
 }
 
 extension CountryListViewController: UITableViewDelegate, UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 120
@@ -66,12 +57,12 @@ extension CountryListViewController: UITableViewDelegate, UITableViewDataSource 
         let country = countries[indexPath.row]
 
         if searching {
-            cell.countrynameLabel?.text = filteredResult[indexPath.row].name.official.capitalized
-            cell.countryFlag.downloaded(from: filteredResult[indexPath.row].flags.png)
+            cell.countrynameLabel?.text = filteredResult[indexPath.row].name.capitalized
+            cell.countryFlag.downloaded(from: filteredResult[indexPath.row].flag)
 
         } else {
-            cell.countrynameLabel?.text = country.name.official.capitalized
-            cell.countryFlag.downloaded(from: country.flags.png)
+            cell.countrynameLabel?.text = country.name.capitalized
+            cell.countryFlag.downloaded(from: country.flag)
         }
         return cell
     }
@@ -81,11 +72,9 @@ extension CountryListViewController: UITableViewDelegate, UITableViewDataSource 
             
             if searching {
                 vc.country = filteredResult[indexPath.row]
-
             } else {
                 vc.country = countries[indexPath.row]
             }
-            
             self.present(vc, animated: true, completion: nil)
         }
     }
@@ -100,12 +89,12 @@ extension CountryListViewController: UITableViewDelegate, UITableViewDataSource 
 extension CountryListViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if searchText.isEmpty {
-                filteredResult.removeAll()
-                searching = false
-            } else {
-                filteredResult = countries.filter{ $0.name.official.range(of: searchText, options: [.caseInsensitive, .anchored]) != nil }
-                searching = true
-            }
-            tableView.reloadData()
+            filteredResult.removeAll()
+            searching = false
+        } else {
+            filteredResult = countries.filter{ $0.name.range(of: searchText, options: [.caseInsensitive, .anchored]) != nil }
+            searching = true
+        }
+        tableView.reloadData()
     }
 }

@@ -17,10 +17,10 @@ class CountryDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        guard let url = country?.flags.png else { return }
+        guard let url = country?.flag else { return }
         
         imageView.downloaded(from: url)
-        countrynameLabel.text = country?.name.official.capitalized
+        countrynameLabel.text = country?.name.capitalized
     }
 }
 
