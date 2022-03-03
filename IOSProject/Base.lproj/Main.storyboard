@@ -455,6 +455,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="2Hd-GL-Kk9"/>
                     <connections>
+                        <outlet property="btValider" destination="fL2-IO-obi" id="irK-PQ-5H3"/>
                         <outlet property="lbPays" destination="U1x-Hz-miT" id="VER-Z6-dC7"/>
                         <outlet property="lbScore" destination="u6E-SE-5Yu" id="5Wj-tY-2gJ"/>
                         <outlet property="lbSeconds" destination="DK4-yl-Iph" id="6Jq-4i-JnQ"/>
