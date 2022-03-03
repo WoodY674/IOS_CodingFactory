@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class CapitaleGameViewController: UIViewController {
     
     
     @IBOutlet weak var lbSeconds: UILabel!
@@ -44,7 +44,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(ViewController.counter), userInfo: nil, repeats: true )
+        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(CapitaleGameViewController.counter), userInfo: nil, repeats: true )
         
         countriesAPICall.getCountriesRandomCapital(completion: {response, error in
             print(response)

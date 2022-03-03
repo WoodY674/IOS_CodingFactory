@@ -157,10 +157,10 @@
             </objects>
             <point key="canvasLocation" x="-1510" y="-561"/>
         </scene>
-        <!--View Controller-->
+        <!--Capitale Game View Controller-->
         <scene sceneID="TgO-c8-6JW">
             <objects>
-                <viewController id="e9P-Ho-ei8" customClass="ViewController" customModule="IOSProject" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="e9P-Ho-ei8" customClass="CapitaleGameViewController" customModule="IOSProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="AKo-3L-yVJ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
