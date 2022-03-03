@@ -9,43 +9,61 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var tableView: UITableView!
+
+    @IBOutlet weak var lbSeconds: UILabel!
+    //@IBOutlet weak var textfiedReponse: UITextField!
     
+    @IBOutlet weak var lbScore: UILabel!
+    @IBOutlet weak var textfield: UITextField!
+    var continent = String()
     private let countriesAPICall = Service()
         
     var countries = [Country]()
+    var score = 0
     
+    @IBAction func click(_ sender: Any) {
+        var value = textfield.text!
+        if(value == continent) {
+            counterScore()
+            countriesAPICall.getCountriesRandomCapital(completion: {response, error in
+                print(response)
+                DispatchQueue.main.async {
+                    self.lbPays.text = String(response![0])
+                    self.continent = String(response![1])
+                }
+            })
+        }
+    }
+    @IBOutlet weak var lbPays: UILabel!
+    var timer = Timer()
+    
+    var seconds = 60
+
     override func viewDidLoad() {
         super.viewDidLoad()
-                
-        self.tableView.delegate = self
-        self.tableView.dataSource = self
         
-        countriesAPICall.getCountryByName(countryName: "france", completion: {response, error in
+        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(ViewController.counter), userInfo: nil, repeats: true )
+        
+        countriesAPICall.getCountriesRandomCapital(completion: {response, error in
             print(response)
+            DispatchQueue.main.async {
+                self.lbPays.text = String(response![0])
+                self.continent = String(response![1])
+            }
         })
-        
+    }
+    
+    @objc func counter() {
+        seconds-=1
+        lbSeconds.text = String(seconds) + " secondes"
+        if(seconds == 0) {
+            timer.invalidate()
+        }
+    }
+    
+    func counterScore() {
+        score+=1
+        lbScore.text = String(score)
     }
 }
 
-extension ViewController: UITableViewDelegate, UITableViewDataSource {
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 120
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return countries.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "customCell") as! CustomViewCell
-        
-        
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "showCountryDetails", sender: self)
-    }
-}
