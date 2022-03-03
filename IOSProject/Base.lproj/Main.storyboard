@@ -202,7 +202,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u6E-SE-5Yu">
-                                <rect key="frame" x="321" y="164" width="11" height="21"/>
+                                <rect key="frame" x="252" y="193" width="41" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -215,6 +215,7 @@
                     <navigationItem key="navigationItem" id="2Hd-GL-Kk9"/>
                     <connections>
                         <outlet property="lbPays" destination="U1x-Hz-miT" id="VER-Z6-dC7"/>
+                        <outlet property="lbScore" destination="u6E-SE-5Yu" id="5Wj-tY-2gJ"/>
                         <outlet property="lbSeconds" destination="DK4-yl-Iph" id="6Jq-4i-JnQ"/>
                         <outlet property="textfield" destination="vIL-Es-x7J" id="1wY-W0-Pyq"/>
                     </connections>
