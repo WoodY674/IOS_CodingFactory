@@ -32,29 +32,34 @@ class ScoresViewController: UIViewController, UITableViewDataSource {
         
         tableView.dataSource = self
         
-        database.child(myCurrentUser!).observe(.value, with: {snapshot in
-            guard let snapshotValue = snapshot.value as? [String: Any] else {
-                return
-            }
-            if let player = snapshotValue["Player"] as? String, let game = snapshotValue["Game"] as? String, let score = snapshotValue["Score"] as? String{
-                    let newScore = Scores(player: player, game: game, score: score)
-                self.scoresList.append(newScore)
+        if myCurrentUser != nil {
+            database.child(myCurrentUser!).observe(.value, with: {snapshot in
+                guard let snapshotValue = snapshot.value as? [String: Any] else {
+                    return
+                }
+                if let player = snapshotValue["Player"] as? String, let game = snapshotValue["Game"] as? String, let score = snapshotValue["Score"] as? String{
+                        let newScore = Scores(player: player, game: game, score: score)
+                    self.scoresList.append(newScore)
+                    
+                    let indexPath = IndexPath(row: self.scoresList.count-1, section: 0)
+                    self.tableView.insertRows(at: [indexPath], with: .automatic)
+                }
+                print("Scores list : ",self.scoresList)
+                print(snapshotValue)
                 
-                let indexPath = IndexPath(row: self.scoresList.count-1, section: 0)
-                self.tableView.insertRows(at: [indexPath], with: .automatic)
+                
+            })
+            if Auth.auth().currentUser != nil {
+              // User is signed in.
+                print(Auth.auth().currentUser!)
+            } else {
+              // No user is signed in.
             }
-            print("Scores list : ",self.scoresList)
-            print(snapshotValue)
-            
-            
-        })
-        if Auth.auth().currentUser != nil {
-          // User is signed in.
-            print(Auth.auth().currentUser!)
         } else {
-          // No user is signed in.
-          print("no user connected")
+            print("no user connected")
         }
+        
+       
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
