@@ -24,6 +24,8 @@
 		840A9EFC27CF987800D58AA5 /* Path.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840A9EFB27CF987800D58AA5 /* Path.swift */; };
 		840A9EFE27CF9D1100D58AA5 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840A9EFD27CF9D1100D58AA5 /* Error.swift */; };
 		840A9F0227CFB21B00D58AA5 /* CustomViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840A9F0127CFB21B00D58AA5 /* CustomViewCell.swift */; };
+		C4F9B08027D0B8D80085CFF6 /* CountryDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F9B07F27D0B8D80085CFF6 /* CountryDetailsViewController.swift */; };
+		C4F9B08227D0B8FA0085CFF6 /* CountryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F9B08127D0B8FA0085CFF6 /* CountryListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +67,8 @@
 		840A9EFB27CF987800D58AA5 /* Path.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Path.swift; sourceTree = "<group>"; };
 		840A9EFD27CF9D1100D58AA5 /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 		840A9F0127CFB21B00D58AA5 /* CustomViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewCell.swift; sourceTree = "<group>"; };
+		C4F9B07F27D0B8D80085CFF6 /* CountryDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryDetailsViewController.swift; sourceTree = "<group>"; };
+		C4F9B08127D0B8FA0085CFF6 /* CountryListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +123,8 @@
 				840A9EE627CF21DD00D58AA5 /* models */,
 				840A9E7627CE383A00D58AA5 /* AppDelegate.swift */,
 				840A9E7827CE383A00D58AA5 /* SceneDelegate.swift */,
+				C4F9B07F27D0B8D80085CFF6 /* CountryDetailsViewController.swift */,
+				C4F9B08127D0B8FA0085CFF6 /* CountryListViewController.swift */,
 				840A9E7A27CE383A00D58AA5 /* ViewController.swift */,
 				840A9E7C27CE383A00D58AA5 /* Main.storyboard */,
 				840A9E7F27CE383C00D58AA5 /* Assets.xcassets */,
@@ -308,6 +314,8 @@
 				840A9EF527CF93B600D58AA5 /* Currency.swift in Sources */,
 				840A9EEB27CF348F00D58AA5 /* Score.swift in Sources */,
 				840A9EFA27CF96BE00D58AA5 /* Service.swift in Sources */,
+				C4F9B08027D0B8D80085CFF6 /* CountryDetailsViewController.swift in Sources */,
+				C4F9B08227D0B8FA0085CFF6 /* CountryListViewController.swift in Sources */,
 				840A9E7927CE383A00D58AA5 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
