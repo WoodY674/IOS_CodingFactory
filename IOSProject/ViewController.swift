@@ -65,6 +65,7 @@ class ViewController: UIViewController {
         lbSeconds.text = String(seconds) + " secondes"
         if(seconds == 0) {
             timer.invalidate()
+            
             // get current dateTime and convert it to string
             let date = Date()
             let dateFormatter = DateFormatter()
