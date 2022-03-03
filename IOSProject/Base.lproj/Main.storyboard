@@ -265,15 +265,6 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2iE-Na-ljx">
-                                                    <rect key="frame" x="20" y="11" width="140" height="21.5"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="140" id="oWF-ou-FSr"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pki-bX-pWy">
                                                     <rect key="frame" x="331" y="11" width="70" height="21.5"/>
                                                     <constraints>
@@ -284,7 +275,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="koq-Vd-42U">
-                                                    <rect key="frame" x="186" y="11" width="126" height="21.5"/>
+                                                    <rect key="frame" x="29" y="11" width="45" height="21.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -292,20 +283,15 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="pki-bX-pWy" firstAttribute="leading" secondItem="mb0-Ni-F9y" secondAttribute="leading" constant="331" id="9tr-Fd-3Yo"/>
-                                                <constraint firstItem="2iE-Na-ljx" firstAttribute="top" secondItem="mb0-Ni-F9y" secondAttribute="topMargin" id="Bch-sr-9Af"/>
-                                                <constraint firstItem="2iE-Na-ljx" firstAttribute="baseline" secondItem="koq-Vd-42U" secondAttribute="baseline" id="Cyd-n4-f7Q"/>
-                                                <constraint firstItem="2iE-Na-ljx" firstAttribute="firstBaseline" secondItem="koq-Vd-42U" secondAttribute="firstBaseline" id="F09-kJ-jgH"/>
-                                                <constraint firstItem="koq-Vd-42U" firstAttribute="leading" secondItem="2iE-Na-ljx" secondAttribute="trailing" constant="26" id="F4Y-m8-vL9"/>
-                                                <constraint firstItem="2iE-Na-ljx" firstAttribute="centerY" secondItem="mb0-Ni-F9y" secondAttribute="centerY" id="X9b-fp-TWB"/>
-                                                <constraint firstItem="2iE-Na-ljx" firstAttribute="leading" secondItem="mb0-Ni-F9y" secondAttribute="leadingMargin" id="dFu-CH-yZg"/>
-                                                <constraint firstItem="2iE-Na-ljx" firstAttribute="firstBaseline" secondItem="pki-bX-pWy" secondAttribute="firstBaseline" id="lsq-UL-M0o"/>
-                                                <constraint firstItem="pki-bX-pWy" firstAttribute="leading" secondItem="koq-Vd-42U" secondAttribute="trailing" constant="19" id="rsB-gE-P5r"/>
-                                                <constraint firstItem="2iE-Na-ljx" firstAttribute="baseline" secondItem="pki-bX-pWy" secondAttribute="baseline" id="tqU-sx-WUz"/>
+                                                <constraint firstItem="koq-Vd-42U" firstAttribute="firstBaseline" secondItem="pki-bX-pWy" secondAttribute="firstBaseline" id="XjN-E5-bYN"/>
+                                                <constraint firstItem="koq-Vd-42U" firstAttribute="baseline" secondItem="pki-bX-pWy" secondAttribute="baseline" id="YRu-YL-kfk"/>
+                                                <constraint firstItem="koq-Vd-42U" firstAttribute="top" secondItem="mb0-Ni-F9y" secondAttribute="topMargin" id="aPc-Tw-UAJ"/>
+                                                <constraint firstItem="pki-bX-pWy" firstAttribute="leading" secondItem="koq-Vd-42U" secondAttribute="trailing" constant="257" id="rsB-gE-P5r"/>
+                                                <constraint firstItem="koq-Vd-42U" firstAttribute="bottom" secondItem="mb0-Ni-F9y" secondAttribute="bottomMargin" id="tTa-eJ-dhP"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="gameLabel" destination="koq-Vd-42U" id="Bls-83-1Rd"/>
-                                            <outlet property="playerLabel" destination="2iE-Na-ljx" id="RiG-xo-XfR"/>
                                             <outlet property="scoreLabel" destination="pki-bX-pWy" id="KuD-Dd-lTo"/>
                                         </connections>
                                     </tableViewCell>
@@ -331,19 +317,22 @@
                     <view key="view" contentMode="scaleToFill" id="n0n-A2-73z">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="onc-tb-y8I">
-                                <rect key="frame" x="164" y="433" width="88" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Add entry"/>
-                            </button>
-                        </subviews>
                         <viewLayoutGuide key="safeArea" id="sND-BT-kJ8"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Home" id="JtN-gz-QER">
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="xWq-vY-Q0L">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="5TL-S2-JGF">
+                                <rect key="frame" x="20" y="5" width="82" height="34.5"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Log out"/>
+                                <connections>
+                                    <action selector="logOut:" destination="Xdm-dP-smH" eventType="touchUpInside" id="V3Z-GD-Ssg"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="plain" id="4Yx-7b-Z4Y">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="4aa-Yp-hbB">
                                 <rect key="frame" x="324" y="5" width="70" height="34.5"/>
@@ -357,9 +346,6 @@
                         </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
-                    <connections>
-                        <outlet property="addEntryButton" destination="onc-tb-y8I" id="r4i-ru-P5k"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mka-zI-qsg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -16,20 +16,20 @@ class ScoresViewController: UIViewController, UITableViewDataSource {
     @IBOutlet weak var tableView: UITableView!
     
     struct Scores {
-        let player: String
         let game: String
         let score: String
     }
     
     var scoresList = [Scores]()
     
-    let myCurrentUser = Auth.auth().currentUser?.uid
     
     
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         
+        let myCurrentUser = Auth.auth().currentUser?.uid
+
         tableView.dataSource = self
         
         if myCurrentUser != nil {
@@ -37,29 +37,33 @@ class ScoresViewController: UIViewController, UITableViewDataSource {
                 guard let snapshotValue = snapshot.value as? [String: Any] else {
                     return
                 }
-                if let player = snapshotValue["Player"] as? String, let game = snapshotValue["Game"] as? String, let score = snapshotValue["Score"] as? String{
-                        let newScore = Scores(player: player, game: game, score: score)
-                    self.scoresList.append(newScore)
-                    
-                    let indexPath = IndexPath(row: self.scoresList.count-1, section: 0)
-                    self.tableView.insertRows(at: [indexPath], with: .automatic)
-                }
-                print("Scores list : ",self.scoresList)
-                print(snapshotValue)
                 
+                if snapshot.exists() {
+                        for child in snapshot.children {
+                            let snap = child as! DataSnapshot
+                            let dict = snap.value as! [String: Any]
+                            let myScore = dict["Score"] as! String
+                            let myGame = dict["Game"] as! String
+                            let newScore = Scores(game: myGame, score: myScore)
+                        self.scoresList.append(newScore)
+                        
+                        let indexPath = IndexPath(row: self.scoresList.count-1, section: 0)
+                        self.tableView.insertRows(at: [indexPath], with: .automatic)
+                        }
+                }
+
                 
             })
-            if Auth.auth().currentUser != nil {
-              // User is signed in.
-                print(Auth.auth().currentUser!)
-            } else {
-              // No user is signed in.
-            }
+            
+            
         } else {
             print("no user connected")
         }
         
-       
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
+
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -73,11 +77,15 @@ class ScoresViewController: UIViewController, UITableViewDataSource {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ScoresTableViewCell
         
-        cell.playerLabel.text = scoreBygame.player
         cell.gameLabel.text = scoreBygame.game
         cell.scoreLabel.text = String(scoreBygame.score)
         
         return cell
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super .viewDidDisappear(animated)
+        self.scoresList = []
     }
     
 

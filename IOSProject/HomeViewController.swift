@@ -8,35 +8,42 @@
 import UIKit
 import FirebaseDatabase
 import FirebaseAuth
+import Foundation
 
 class HomeViewController: UIViewController {
-
-    let date = Date()
-    let dateFormatter = DateFormatter()
     
     private let database = Database.database().reference()
     
-    let data: [String: String] = [
-        "Player": "Antoine",
-        "Game": "Monnaie",
-        "Score": "25"
-    ]
     let myCurrentUser = Auth.auth().currentUser?.uid
-    
-    @IBOutlet weak var addEntryButton: UIButton!
-    
+        
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        addEntryButton.addTarget(self, action: #selector(addNewEntry), for: .touchUpInside)
     }
     
-    @objc private func addNewEntry(){
-            
-            database.child(myCurrentUser!).setValue(data)
-            //database.child(myCurrentUser!).child(dateFormatter.string(from: date)).setValue(data)
+    @IBAction func logOut(_ sender: Any) {
+        print("logout pressed")
+        let dialogMessage = UIAlertController(title: "Confirm", message: "Do you really want to log out ?", preferredStyle: .alert)
+         
+         // Create OK button with action handler
+         let ok = UIAlertAction(title: "OK", style: .default, handler: { (action) ->
+             Void in do {
+                 try Auth.auth().signOut()
+                 print("logged out")
+               } catch let signOutError as NSError {
+                 print("Error signing out: %@", signOutError)
+               }
+          })
+        let cancel = UIAlertAction(title: "Cancel", style: .default, handler: { (action) -> Void in
+         })
+         
+        dialogMessage.addAction(ok)
+        dialogMessage.addAction(cancel)
         
+        self.present(dialogMessage, animated: true, completion: nil)
+        
+        return
     }
     
 
