@@ -487,42 +487,8 @@
                                             <segue destination="e9P-Ho-ei8" kind="show" identifier="showDetails" id="rNs-rc-0gZ"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellMonnaie" rowHeight="120" id="m0h-QH-2oS" customClass="CustomViewCell" customModule="IOSProject" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="164.5" width="414" height="120"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="m0h-QH-2oS" id="ggA-fC-zLW">
-                                            <rect key="frame" x="0.0" y="0.0" width="385.5" height="120"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F8C-mj-s8O">
-                                                    <rect key="frame" x="5" y="5" width="375.5" height="110"/>
-                                                    <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Devine la monnaie" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z8X-IU-IT7">
-                                                            <rect key="frame" x="108" y="14.5" width="211" height="80"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                            <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="20"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                    </subviews>
-                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                </view>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="F8C-mj-s8O" firstAttribute="leading" secondItem="ggA-fC-zLW" secondAttribute="leading" constant="5" id="5Yg-eV-BpS"/>
-                                                <constraint firstAttribute="bottom" secondItem="F8C-mj-s8O" secondAttribute="bottom" constant="5" id="gM9-0P-7Y5"/>
-                                                <constraint firstAttribute="trailing" secondItem="F8C-mj-s8O" secondAttribute="trailing" constant="5" id="oM4-aY-h12"/>
-                                                <constraint firstItem="F8C-mj-s8O" firstAttribute="top" secondItem="ggA-fC-zLW" secondAttribute="top" constant="5" id="tsA-39-vTa"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="contentView" destination="ggA-fC-zLW" id="MGU-TM-Oj6"/>
-                                            <outlet property="countryView" destination="ggA-fC-zLW" id="nXA-39-h56"/>
-                                            <outlet property="countrynameLabel" destination="Z8X-IU-IT7" id="MXM-B0-jGF"/>
-                                        </connections>
-                                    </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellPays" rowHeight="120" id="qe3-YK-1b3" customClass="CustomViewCell" customModule="IOSProject" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="284.5" width="414" height="120"/>
+                                        <rect key="frame" x="0.0" y="164.5" width="414" height="120"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qe3-YK-1b3" id="bTz-Lx-zFc">
                                             <rect key="frame" x="0.0" y="0.0" width="385.5" height="120"/>
