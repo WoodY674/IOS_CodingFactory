@@ -26,6 +26,7 @@
 		844BE16327CF65EE003E2B9D /* CountryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844BE16227CF65EE003E2B9D /* CountryListViewController.swift */; };
 		844BE16527CF6ACD003E2B9D /* CustomViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844BE16427CF6ACD003E2B9D /* CustomViewCell.swift */; };
 		844BE16727CF9805003E2B9D /* CountryDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844BE16627CF9805003E2B9D /* CountryDetailsViewController.swift */; };
+		846995CF27D227AC00F5D23C /* SVGKitFrameworks in Resources */ = {isa = PBXBuildFile; fileRef = 846995CE27D227AC00F5D23C /* SVGKitFrameworks */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,7 @@
 		844BE16227CF65EE003E2B9D /* CountryListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryListViewController.swift; sourceTree = "<group>"; };
 		844BE16427CF6ACD003E2B9D /* CustomViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewCell.swift; sourceTree = "<group>"; };
 		844BE16627CF9805003E2B9D /* CountryDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryDetailsViewController.swift; sourceTree = "<group>"; };
+		846995CE27D227AC00F5D23C /* SVGKitFrameworks */ = {isa = PBXFileReference; lastKnownFileType = folder; path = SVGKitFrameworks; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 				840A9E7527CE383A00D58AA5 /* IOSProject */,
 				840A9E8C27CE383D00D58AA5 /* IOSProjectTests */,
 				840A9E9627CE383D00D58AA5 /* IOSProjectUITests */,
+				846995CE27D227AC00F5D23C /* SVGKitFrameworks */,
 				840A9E7427CE383A00D58AA5 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -295,6 +298,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				846995CF27D227AC00F5D23C /* SVGKitFrameworks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

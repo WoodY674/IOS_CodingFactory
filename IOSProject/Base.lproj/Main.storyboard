@@ -151,9 +151,8 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="contentView" destination="pWa-aU-R9e" id="S4d-yM-TfT"/>
                                             <outlet property="countryFlag" destination="rUx-Fc-DBE" id="x9d-R3-bip"/>
-                                            <outlet property="countryView" destination="pWa-aU-R9e" id="9Ej-eY-10J"/>
+                                            <outlet property="countryView" destination="wa7-Qu-aPY" id="jCF-aB-fe1"/>
                                             <outlet property="countrynameLabel" destination="QW3-jM-pMM" id="3pk-Fz-tml"/>
                                         </connections>
                                     </tableViewCell>
@@ -163,6 +162,9 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="51"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="xIv-UG-FGs" id="kfC-mU-jTr"/>
+                                </connections>
                             </searchBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="hf3-aY-1fD"/>

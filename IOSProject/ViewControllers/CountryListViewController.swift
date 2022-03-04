@@ -15,7 +15,7 @@ class CountryListViewController: UIViewController {
     private let getCountriesFromApi = Service()
 
     var countries = [Country]()
-    var filteredResult = [Country]()
+    var filteredCountries = [Country]()
     var searching = false
     
     override func viewDidLoad() {
@@ -23,17 +23,19 @@ class CountryListViewController: UIViewController {
         
         getCountriesFromApi.getCountries { [self] response, error in
             DispatchQueue.main.async {
+                self.countries = response!
                 self.tableView.reloadData()
-                print(response)
+                print(countries)
             }
         }
         
-        searchBar.delegate = self
-        tableView.delegate = self
-        tableView.dataSource = self
+        self.searchBar.delegate = self
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
     }
 
 }
+
 
 extension CountryListViewController: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -46,7 +48,7 @@ extension CountryListViewController: UITableViewDelegate, UITableViewDataSource 
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if searching {
-            return filteredResult.count
+            return filteredCountries.count
         } else {
             return countries.count
         }
@@ -55,10 +57,10 @@ extension CountryListViewController: UITableViewDelegate, UITableViewDataSource 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "customCell") as! CustomViewCell
         let country = countries[indexPath.row]
-
+        
         if searching {
-            cell.countrynameLabel?.text = filteredResult[indexPath.row].name.capitalized
-            cell.countryFlag.downloaded(from: filteredResult[indexPath.row].flag)
+            cell.countrynameLabel?.text = filteredCountries[indexPath.row].name.capitalized
+            cell.countryFlag.downloaded(from: filteredCountries[indexPath.row].flag)
 
         } else {
             cell.countrynameLabel?.text = country.name.capitalized
@@ -71,7 +73,7 @@ extension CountryListViewController: UITableViewDelegate, UITableViewDataSource 
         if let vc = storyboard?.instantiateViewController(withIdentifier: "CountryDetails") as? CountryDetailsViewController {
             
             if searching {
-                vc.country = filteredResult[indexPath.row]
+                vc.country = filteredCountries[indexPath.row]
             } else {
                 vc.country = countries[indexPath.row]
             }
@@ -89,10 +91,10 @@ extension CountryListViewController: UITableViewDelegate, UITableViewDataSource 
 extension CountryListViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if searchText.isEmpty {
-            filteredResult.removeAll()
+            filteredCountries.removeAll()
             searching = false
         } else {
-            filteredResult = countries.filter{ $0.name.range(of: searchText, options: [.caseInsensitive, .anchored]) != nil }
+            filteredCountries = countries.filter{ $0.name.range(of: searchText, options: [.caseInsensitive, .anchored]) != nil }
             searching = true
         }
         tableView.reloadData()
