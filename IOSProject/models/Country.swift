@@ -31,7 +31,6 @@ public extension Country {
             let population = json?["population"] as? Int,
             let capital = json?["capital"] as? String,
             let region = json?["region"] as? String,
-            let flag = json?["flag"] as? String,
             let alpha3Code = json?["alpha3Code"] as? String else {
                 return nil
             }

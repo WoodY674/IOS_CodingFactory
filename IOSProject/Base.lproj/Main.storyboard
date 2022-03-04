@@ -204,7 +204,7 @@
             </objects>
             <point key="canvasLocation" x="-2316" y="-1351"/>
         </scene>
-        <!--Country List View Controller-->
+        <!--List-->
         <scene sceneID="1K1-cp-mVD">
             <objects>
                 <viewController id="xIv-UG-FGs" customClass="ViewController" customModule="IOSProject" customModuleProvider="target" sceneMemberID="viewController">
@@ -252,31 +252,15 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wa7-Qu-aPY">
-                                                    <rect key="frame" x="5" y="5" width="404" height="110"/>
-                                                    <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rUx-Fc-DBE">
-                                                            <rect key="frame" x="8" y="5" width="100" height="100"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="100" id="2jg-Cp-oMz"/>
-                                                                <constraint firstAttribute="width" constant="100" id="7RA-c1-0Ht"/>
-                                                            </constraints>
-                                                        </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Country name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QW3-jM-pMM">
-                                                            <rect key="frame" x="128" y="5" width="130.5" height="100"/>
-                                                            <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="20"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                    </subviews>
-                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pki-bX-pWy">
+                                                    <rect key="frame" x="331" y="11" width="70" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="70" id="mkJ-K8-X33"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
-                                                </view>
+                                                </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="koq-Vd-42U">
                                                     <rect key="frame" x="60" y="11" width="45" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -296,79 +280,22 @@
                                         <connections>
                                             <outlet property="gameLabel" destination="koq-Vd-42U" id="Bls-83-1Rd"/>
                                             <outlet property="scoreLabel" destination="pki-bX-pWy" id="KuD-Dd-lTo"/>
-                                            <outlet property="countryFlag" destination="rUx-Fc-DBE" id="x9d-R3-bip"/>
-                                            <outlet property="countryView" destination="wa7-Qu-aPY" id="jCF-aB-fe1"/>
-                                            <outlet property="countrynameLabel" destination="QW3-jM-pMM" id="3pk-Fz-tml"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <searchBar contentMode="redraw" fixedFrame="YES" placeholder="Search..." translatesAutoresizingMaskIntoConstraints="NO" id="zoN-65-0BE">
-                                <rect key="frame" x="0.0" y="88" width="414" height="51"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <outlet property="delegate" destination="xIv-UG-FGs" id="kfC-mU-jTr"/>
-                                </connections>
-                            </searchBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="EHk-Ib-dK9"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-
-                    <navigationItem key="navigationItem" id="jTG-8j-etZ"/>
+                    <navigationItem key="navigationItem" title="Scores" id="02v-Ec-LL5"/>
                     <connections>
                         <outlet property="tableView" destination="cZt-wx-OwM" id="cii-6P-ePW"/>
-                        <outlet property="searchBar" destination="zoN-65-0BE" id="M8B-SM-lQc"/>
-                        <outlet property="tableView" destination="unW-2I-zVK" id="qHT-4u-n5D"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7LU-AW-MbZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2318.840579710145" y="-561.16071428571422"/>
-        </scene>
-        <!--Country Details View Controller-->
-        <scene sceneID="2At-5u-B2E">
-            <objects>
-                <viewController storyboardIdentifier="CountryDetails" id="CD4-wV-J1L" customClass="CountryDetailsViewController" customModule="IOSProject" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="I6s-Af-q0z">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Px3-dd-sVC">
-                                <rect key="frame" x="5" y="44" width="404" height="250"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="250" id="vgR-RH-Wmb"/>
-                                </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Country Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2jg-jD-yEO">
-                                <rect key="frame" x="5" y="44" width="404" height="808"/>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="22"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="MfZ-Ml-eHx"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="MfZ-Ml-eHx" firstAttribute="trailing" secondItem="Px3-dd-sVC" secondAttribute="trailing" constant="5" id="9Wo-xI-diE"/>
-                            <constraint firstItem="Px3-dd-sVC" firstAttribute="top" secondItem="MfZ-Ml-eHx" secondAttribute="top" id="AEI-OR-MJ2"/>
-                            <constraint firstItem="Px3-dd-sVC" firstAttribute="leading" secondItem="MfZ-Ml-eHx" secondAttribute="leading" constant="5" id="JHo-86-xrG"/>
-                            <constraint firstItem="2jg-jD-yEO" firstAttribute="centerY" secondItem="I6s-Af-q0z" secondAttribute="centerY" id="aXQ-E2-8UD"/>
-                            <constraint firstItem="2jg-jD-yEO" firstAttribute="trailing" secondItem="Px3-dd-sVC" secondAttribute="trailing" id="jjC-QN-nJh"/>
-                            <constraint firstItem="2jg-jD-yEO" firstAttribute="top" secondItem="Px3-dd-sVC" secondAttribute="top" id="oJo-Tv-xZt"/>
-                            <constraint firstItem="2jg-jD-yEO" firstAttribute="leading" secondItem="Px3-dd-sVC" secondAttribute="leading" id="xlp-Cz-D53"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="HDc-di-CCP"/>
-                    <connections>
-                        <outlet property="countrynameLabel" destination="2jg-jD-yEO" id="K5g-9z-fNm"/>
-                        <outlet property="imageView" destination="Px3-dd-sVC" id="x9K-ef-LT5"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="f6T-y4-oWl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-2317" y="187"/>
+            <point key="canvasLocation" x="-1510.144927536232" y="-561.16071428571422"/>
         </scene>
         <!--Home-->
         <scene sceneID="Yk2-dH-6p7">
@@ -442,7 +369,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C4K-5p-cmM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1413" y="-561"/>
+            <point key="canvasLocation" x="-1510" y="-561"/>
         </scene>
         <!--Capitale Game View Controller-->
         <scene sceneID="TgO-c8-6JW">
