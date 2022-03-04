@@ -44,3 +44,4 @@ public extension Country {
         self.currencies = Currency.getCountryData(json: json?["currencies"] as? [[String: Any]]) as? [Currency]
     }
 }
+
