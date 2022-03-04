@@ -86,6 +86,7 @@ class FlagGameViewController: UIViewController {
     @objc func counter() {
         seconds-=1
         lbSeconds.text = String(seconds) + " seconds"
+        
         if(seconds == 0) {
             timer.invalidate()
             
