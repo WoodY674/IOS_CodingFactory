@@ -6,8 +6,14 @@
 //
 
 import UIKit
+import FirebaseDatabase
+import FirebaseAuth
+import Foundation
 
 class FlagGameViewController: UIViewController {
+    
+    let myCurrentUser = Auth.auth().currentUser?.uid
+    private let database = Database.database().reference()
     
     
     @IBOutlet weak var lbSeconds: UILabel!
@@ -79,10 +85,25 @@ class FlagGameViewController: UIViewController {
     
     @objc func counter() {
         seconds-=1
-        lbSeconds.text = String(seconds) + " secondes"
+        lbSeconds.text = String(seconds) + " seconds"
         if(seconds == 0) {
             timer.invalidate()
-            var dialogMessage = UIAlertController(title: "Information", message: "Partie terminée, score = \(score)", preferredStyle: .alert)
+            
+            let date = Date()
+            let dateFormatter = DateFormatter()
+            dateFormatter.locale = Locale(identifier: "fr_FR")
+            dateFormatter.dateFormat = "yyyy-MM-dd hh:mm:ss"
+            let finalDate = dateFormatter.string(from: date)
+            
+            let data: [String: String] = [
+                "Game": "Flags",
+                "Score": String(score)
+            ]
+            
+            //push it as child of the current user in DBs
+            database.child(myCurrentUser!).child(finalDate).setValue(data)
+            
+            var dialogMessage = UIAlertController(title: "Information", message: "Game ended, score = \(score)", preferredStyle: .alert)
             let ok = UIAlertAction(title: "OK", style: .default, handler: { (action) -> Void in
                  print("Ok button tapped")
               })

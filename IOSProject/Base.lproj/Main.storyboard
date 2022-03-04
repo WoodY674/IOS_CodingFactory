@@ -187,19 +187,6 @@
             </objects>
             <point key="canvasLocation" x="-3983" y="-1351"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="fBL-3S-rTd">
-            <objects>
-                <viewController id="aGJ-2r-ZpJ" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="ErA-Jk-u4O">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    </tableView>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="9Sy-Op-ajl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-3983" y="-561"/>
-        </scene>
         <!--List-->
         <scene sceneID="iXu-9L-Eak">
             <objects>
@@ -275,7 +262,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="koq-Vd-42U">
-                                                    <rect key="frame" x="29" y="11" width="45" height="21.5"/>
+                                                    <rect key="frame" x="60" y="11" width="45" height="21.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -286,7 +273,7 @@
                                                 <constraint firstItem="koq-Vd-42U" firstAttribute="firstBaseline" secondItem="pki-bX-pWy" secondAttribute="firstBaseline" id="XjN-E5-bYN"/>
                                                 <constraint firstItem="koq-Vd-42U" firstAttribute="baseline" secondItem="pki-bX-pWy" secondAttribute="baseline" id="YRu-YL-kfk"/>
                                                 <constraint firstItem="koq-Vd-42U" firstAttribute="top" secondItem="mb0-Ni-F9y" secondAttribute="topMargin" id="aPc-Tw-UAJ"/>
-                                                <constraint firstItem="pki-bX-pWy" firstAttribute="leading" secondItem="koq-Vd-42U" secondAttribute="trailing" constant="257" id="rsB-gE-P5r"/>
+                                                <constraint firstItem="pki-bX-pWy" firstAttribute="leading" secondItem="koq-Vd-42U" secondAttribute="trailing" constant="226" id="rsB-gE-P5r"/>
                                                 <constraint firstItem="koq-Vd-42U" firstAttribute="bottom" secondItem="mb0-Ni-F9y" secondAttribute="bottomMargin" id="tTa-eJ-dhP"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -405,7 +392,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Pays" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U1x-Hz-miT">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Country :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U1x-Hz-miT">
                                 <rect key="frame" x="101" y="270" width="130" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -416,7 +403,7 @@
                                 <rect key="frame" x="112" y="423" width="90" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Valider"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Confirm"/>
                                 <connections>
                                     <action selector="click:" destination="e9P-Ho-ei8" eventType="touchUpInside" id="ybW-CE-dXy"/>
                                 </connections>
@@ -450,7 +437,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="guH-pG-e9U" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4958" y="-1274"/>
+            <point key="canvasLocation" x="-4836" y="287"/>
         </scene>
         <!--Game View Controller-->
         <scene sceneID="Bg8-ht-K2a">
@@ -582,7 +569,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="72g-Xx-xOK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3875.36231884058" y="-390.40178571428572"/>
+            <point key="canvasLocation" x="-3984" y="-561"/>
         </scene>
         <!--Flag Game View Controller-->
         <scene sceneID="mce-fC-MiN">
@@ -603,7 +590,7 @@
                                 <rect key="frame" x="116" y="452" width="90" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Valider"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Confirm"/>
                                 <connections>
                                     <action selector="click:" destination="cH1-yq-y3j" eventType="touchUpInside" id="lWk-Qb-6ab"/>
                                 </connections>
@@ -647,7 +634,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eBj-jn-PPr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-5036" y="-601"/>
+            <point key="canvasLocation" x="-3984" y="287"/>
         </scene>
     </scenes>
     <resources>

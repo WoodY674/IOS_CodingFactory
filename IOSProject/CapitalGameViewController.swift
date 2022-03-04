@@ -64,7 +64,7 @@ class CapitaleGameViewController: UIViewController {
     
     @objc func counter() {
         seconds-=1
-        lbSeconds.text = String(seconds) + " secondes"
+        lbSeconds.text = String(seconds) + " seconds"
         if(seconds == 0) {
             timer.invalidate()
             
@@ -76,13 +76,14 @@ class CapitaleGameViewController: UIViewController {
             let finalDate = dateFormatter.string(from: date)
             
             let data: [String: String] = [
-                "Game": "Capitale",
+                "Game": "Capital city",
                 "Score": String(score)
             ]
             
             //push it as child of the current user in DBs
             database.child(myCurrentUser!).child(finalDate).setValue(data)
-            var dialogMessage = UIAlertController(title: "Information", message: "Partie terminée, score = \(score)", preferredStyle: .alert)
+            
+            var dialogMessage = UIAlertController(title: "Information", message: "Game ended, score = \(score)", preferredStyle: .alert)
             let ok = UIAlertAction(title: "OK", style: .default, handler: { (action) -> Void in
                  print("Ok button tapped")
               })
