@@ -26,16 +26,14 @@ extension GameViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return 2
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: UITableViewCell
         switch indexPath.row {
-        case 0:
-             cell = tableView.dequeueReusableCell(withIdentifier: "cellCapitale") as! CustomViewCell
         case 1:
-            cell = tableView.dequeueReusableCell(withIdentifier: "cellMonnaie") as! CustomViewCell
+            cell = tableView.dequeueReusableCell(withIdentifier: "cellCapitale") as! CustomViewCell
         default:
             cell = tableView.dequeueReusableCell(withIdentifier: "cellPays") as! CustomViewCell
         }
